@@ -1,10 +1,16 @@
+let snow = [];
+
 function setup() {
     createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-    background(255);
-    text("put your p5.js code here",10, frameCount % height);
+    background(0);
+    snow.push(new Snowflake());
+
+    for (flake of snow) {
+        flake.render();
+    }
 }
 
 function windowResized() {
