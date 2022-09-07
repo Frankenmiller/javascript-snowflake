@@ -6,9 +6,10 @@ function getRandomSize() {
 }
 
 class Snowflake {
-    constructor(sx, sy) {
+    constructor(sx, sy, img) {
         let x = sx || random(width);
         let y = sy || random(-100, -10);
+        this.img = img;
         this.pos = createVector(x, y);
         this.vel = createVector(0, 0.0);
         this.acc = createVector();
@@ -48,9 +49,8 @@ class Snowflake {
     }
 
     render() {
-        stroke(255);
-        strokeWeight(this.r);
-        point(this.pos.x, this.pos.y);
+        imageMode(CENTER);
+        image(this.img, this.pos.x, this.pos.y, this.r, this.r);
     }
 
     offScreen() {
