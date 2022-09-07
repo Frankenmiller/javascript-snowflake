@@ -11,15 +11,15 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     gravity = createVector(0, 0.01);
     
-    for (let x=0; x<spritesheet.width; x+=205) {
-        for (let y=0; y<spritesheet.height; y+=99) {
-            let img = spritesheet.get(x, y, 205, 99);
+    for (let x=0; x<408; x+=102) {
+        for (let y=0; y<147; y+=49) {
+            let img = spritesheet.get(x, y, 102, 49);
             image(img, x, y);
             textures.push(img);
         }
     }
 
-    for (let i=0; i<500; i++) {
+    for (let i=0; i<80; i++) {
         let x = random(width);
         let y = random(height);
         let design = random(textures);
