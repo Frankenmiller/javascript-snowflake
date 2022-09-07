@@ -1,5 +1,10 @@
 let snow = [];
 let gravity;
+let textures = [];
+
+function preload() {
+    textures = loadImage('images/100_kwacha_front.png');
+}
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -13,7 +18,7 @@ function setup() {
 
 function draw() {
     background(0);
-    // snow.push(new Snowflake());
+    image(textures, 0, 0);
 
     for (flake of snow) {
         flake.applyForce(gravity);
