@@ -13,6 +13,8 @@ class Snowflake {
         this.pos = createVector(x, y);
         this.vel = createVector(0, 0.0);
         this.acc = createVector();
+        this.angle = random(TWO_PI);
+        this.dir = (random(1) > 0.5) ? 1 : -1;
         this.r = getRandomSize();
     }
     
@@ -27,7 +29,7 @@ class Snowflake {
     
     randomize() {        
         let x = random(width);
-        let y = random(-100, -10);
+        let y = random(-100, -50);
         this.pos = createVector(x, y);
         this.vel = createVector(0, 0.0);
         this.acc = createVector();
@@ -43,17 +45,22 @@ class Snowflake {
         this.pos.add(this.vel);
         this.acc.mult(0);
         
-        if (this.pos.y > height + this.r) {
+        if (this.pos.y > height + 150) {
             this.randomize();
         }
+
+        this.angle += this.dir * this.vel.mag() / 100;
+
     }
 
     render() {
+        push();
+        translate(this.pos.x, this.pos.y);
+        rotate(this.angle);
         imageMode(CENTER);
-        image(this.img, this.pos.x, this.pos.y, 102, 49);
+        image(this.img, 0, 0, 102, 49);
+        pop();
+        
     }
 
-    offScreen() {
-        return (this.pos.y > height + this.r);
-    }
 }
