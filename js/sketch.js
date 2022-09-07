@@ -29,8 +29,6 @@ function setup() {
 
 function draw() {
     background(0);
-    // console.log(typeof textures)
-    // image(textures, 0, 0);
 
     for (flake of snow) {
         flake.applyForce(gravity);
