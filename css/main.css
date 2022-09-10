@@ -28,7 +28,7 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: opacity 2.5s ease;
+  transition: opacity 2.5s ease 5s;
 }
 
 .preload-finish {
