@@ -1,6 +1,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 p {
@@ -16,4 +17,79 @@ p {
   text-align: center;
   font-weight: 500;
   font-size: 50px;
+}
+
+.preload {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #77B3D4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 2.5s ease;
+}
+
+.preload-finish {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cloud_1, .cloud_2, .cloud_3 {
+  height: 100px;
+  position: absolute;
+  right: -50%;
+}
+
+.cloud_1 {
+  top: 25%;
+  transform: translate(100%, -25%);
+  animation: clouds 2.0s infinite;
+}
+
+.cloud_2 {
+  top: 50%;
+  transform: translate(100%, -50%);
+  z-index: -1;
+  animation: clouds 2s infinite 1s;
+}
+
+.cloud_3 {
+  top: 75%;
+  transform: translate(100%, -75%);
+  animation: clouds 2s infinite 1.5s;
+}
+
+.preloader_text {
+  position: absolute;
+  top: 75%;
+  transform: translateY(-75%);
+  font-family: sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5mm;
+  color: #FFF;
+}
+
+.airplane {
+  height: 200px;
+  animation: airplane-anim 1s ease infinite alternate;
+}
+
+@keyframes airplane-anim {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(50px);
+  }
+}
+
+@keyframes clouds {
+  from {
+    right: 0%;
+  }
+  to {
+    right: 150%;
+  }
 }
