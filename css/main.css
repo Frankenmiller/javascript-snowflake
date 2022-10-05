@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+.shadow {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 200px auto 0;
+  width: 400px;
+  height: 250px;
+  background: linear-gradient(0deg, #000, #262626);
+}
+
 p {
   background:rgba(55, 55, 55, 0.0);
   color: darkgray;
